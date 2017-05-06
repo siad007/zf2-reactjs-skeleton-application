@@ -1,0 +1,26 @@
+# PHP
+
+version: '2'
+
+services:
+  php-fpm:
+    image: yoshz/php-fpm-v8js:5.6
+    hostname: php-fpm
+    ports:
+      - "2022:22"
+    working_dir: /var/www/html
+    ports:
+      - "8888:80"
+    volumes:
+      - .:/var/www/html
+
+  nginx:
+    image: nginx
+    hostname: nginx
+    ports:
+      - "80:80"
+    links:
+      - "php-fpm:php-fpm"
+    volumes:
+      - "./conf/nginx:/etc/nginx/conf.d"
+      - ".:/var/www/html"
