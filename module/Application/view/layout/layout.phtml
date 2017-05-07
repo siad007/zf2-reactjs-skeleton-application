@@ -19,6 +19,8 @@
 
         <!-- Scripts -->
         <?= $this->headScript()
+            ->prependFile('https://unpkg.com/react-dom@15/dist/react-dom.min.js')
+            ->prependFile('https://unpkg.com/react@15/dist/react.min.js')
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
         ?>

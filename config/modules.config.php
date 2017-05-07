@@ -19,4 +19,5 @@ return [
     'Zend\Router',
     'Zend\Validator',
     'Application',
+    'Siad007\ZF2\ReactJsModule'
 ];
